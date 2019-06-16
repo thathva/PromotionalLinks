@@ -1,0 +1,8 @@
+Flask
+Flask-RESTful
+Flask-JWT
+sklearn
+uwsgi
+pandas
+numpy
+flask
