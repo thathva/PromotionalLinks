@@ -5,6 +5,9 @@ import joblib
 app = Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS'] = True
 
+clf1=joblib.load('model.pkl')
+count=joblib.load('count.pkl')
+
 @app.route('/')
 def home():
 	return render_template('index.html')
@@ -20,6 +23,5 @@ def classify():
         s="Spam"
     return render_template('result.html',pred=s)
 if __name__ == '__main__':
-    clf1=joblib.load('model.pkl')
-    count=joblib.load('count.pkl')
+    
     app.run(port=5000, debug=True)  # important to mention debug=True
